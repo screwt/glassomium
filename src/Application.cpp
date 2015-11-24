@@ -143,7 +143,7 @@ void Application::go(){
         return;
 	}
 
-	ServerManager::initialize("localhost", 5555);
+	ServerManager::initialize("localhost", 5556);
 
 	FileManager::initialize();
 
@@ -182,6 +182,10 @@ void Application::go(){
 
 		// Esc will exit
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+			return;
+		}
+
+		if (UIManager::getSingleton()->shutDownOrdered()) {
 			return;
 		}
 

@@ -29,7 +29,7 @@ ScreensaverWindow::ScreensaverWindow(float normalizedWidth, float normalizedHeig
 	setTuioEnabled(true);
 	setFullscreen(true);
 
-	loadURL("http://localhost:5555/system/screensaver");
+	loadURL("http://localhost:5556/system/screensaver");
 }
 
 std::vector<std::wstring> ScreensaverWindow::getJavascriptBindings(){

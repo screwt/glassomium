@@ -70,6 +70,8 @@ UIManager::UIManager(){
 	screensaverShowing = false;
 
 	appConfigs = 0;
+
+	_shutDownOrdered = false;
 }
 
 /** Requests from the UI server data that the UI manager will utilize to 
@@ -154,7 +156,7 @@ void UIManager::setupSystemLayout(){
 
 		// Add prefix if the URL starts with /
 		if (url[0] == '/'){
-			url = "http://localhost:5555" + url;
+			url = "http://localhost:5556" + url;
 		}
 
 		// Create window
@@ -177,6 +179,14 @@ sf::Color UIManager::intToColor(int color){
 	return sf::Color((sf::Uint8)(color >> 16), 
 						  (sf::Uint8)(color >> 8), 
 						  (sf::Uint8)(color));
+}
+
+bool UIManager::shutDownOrdered() {
+	return _shutDownOrdered;
+}
+
+void UIManager::OrderShutDown() {
+	_shutDownOrdered = true;
 }
 
 /** This is called by the main loop, updates resources connected to the UI Manager */

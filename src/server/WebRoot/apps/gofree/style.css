@@ -1,0 +1,97 @@
+body {
+margin:0px;
+}
+
+.main {
+background-image:url("img/background.png");
+height:446px;
+width:600px;
+}
+.sensor{
+padding-top:10px;
+padding-bottom:0px;
+padding-right:15px;
+
+color:white;
+position: absolute;
+/*background-color:rgba(255,0,0,0.5)*/
+height:40px;
+width:80px;
+font-size:25px;
+overflow:hidden;	
+text-align:right;	
+}
+.sensor1{
+top:40px;
+left:10px;
+}
+.sensor2{
+top:127px;
+left:10px;
+}
+.sensor3{
+top:216px;
+left:10px;
+}
+.sensor4{
+top:304px;
+left:10px;
+}
+.sensor5{
+top:393px;
+left:10px;
+}
+.sensor6{
+top:40px;
+left:495px;
+}
+.sensor7{
+top:127px;
+left:495px;
+}
+.sensor8{
+top:216px;
+left:495px;
+}
+.sensor9{
+top:304px;
+left:495px;
+}
+.sensor10{
+top:393px;
+left:495px;
+}
+.turning{
+position: absolute;
+background-image:url("img/turning.png");
+height:322;
+width:322;
+z-index:1000;
+top:60px;
+left:140px;
+}
+.staticboat{
+position: absolute;
+background-image:url("img/staticboat.png");
+height:466;
+width:600;
+z-index:1005;
+}
+
+
+.rotate, 
+.rotateCounterwise {
+    -webkit-transition: 40000ms ease all;
+    -moz-transition: 40000ms ease all;
+    -o-transition: 40000ms ease all;
+    transition: 40000ms ease all;
+}
+.rotate {
+   -webkit-transform: rotate(360deg);  
+}
+.rotateCounterwise {
+    -webkit-transform: rotate(180deg);    
+}
+
+
+

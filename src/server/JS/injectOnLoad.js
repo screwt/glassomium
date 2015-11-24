@@ -166,6 +166,11 @@ Array.prototype.remove = function(from, to) {
 };
 
 /* Wrapper functions (public JS API) */
+GLA.ShutDown = function(){
+	console.log("GLA.ShutDown");
+	_GLAShutDown();	
+};
+
 
 /** Shows a keyboard (if any is available) to the user */
 GLA.ShowKeyboard = function(){

@@ -103,12 +103,17 @@ public:
 	void update(); // To be called from the main loop
 	void draw(sf::RenderWindow *renderWindow); // Takes care of drawing the UI components in the rendering window
 
+	bool shutDownOrdered();
+	void OrderShutDown();
+
 	GestureManager *getGestureManager(){ return gestureManager; }
 	AnimationManager *getAnimationManager() { return animationManager; }
 	sf::Color getDragColor() const{ return dragColor; } 
 	ThemeConfiguration *getThemeConfig(){ return themeConfig; }
 private:
 	static UIManager *singleton;
+
+	bool _shutDownOrdered;
 
 	// Takes care of recognizing gestures
 	GestureManager *gestureManager;

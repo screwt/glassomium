@@ -450,6 +450,7 @@ std::vector<std::wstring> Window::getJavascriptBindings(){
 	result.push_back(L"_GLASetScrollOnPinch");	
 	result.push_back(L"_GLAShowScreensaver");
 	result.push_back(L"_GLAEnterDragMode");
+	result.push_back(L"_GLAShutDown");
 	return result;
 }
 
@@ -458,6 +459,8 @@ void Window::onJavascriptCallback(std::wstring functionName, std::vector<std::st
 		if (params.size() == 1){
 			UIManager::getSingleton()->onNewWindowRequested(params[0], this, User);
 		}
+	}else if (functionName == L"_GLAShutDown") {
+		UIManager::getSingleton()->OrderShutDown();
     }else if (functionName == L"_GLACloseWindow"){
         UIManager::getSingleton()->onCloseWindowRequested(this);
 	}else if (functionName == L"_GLASetTuioEnabled"){
@@ -1242,7 +1245,7 @@ void Window::onCrash(const string &description){
 	crashReport["URL"] = webView->getCurrentURL();
 
 	// Load crash page
-	this->loadURL("http://localhost:5555/system/crashpage");
+	this->loadURL("http://localhost:5556/system/crashpage");
 }
 
 /** Calls an API that forces the window content to be redrawn */
